@@ -19,6 +19,8 @@ def parse_args(args: list[str] = sys.argv[1:]) -> argparse.Namespace:
 class ButtonApp(App):
     """A simple Textual app with 5 buttons."""
     
+    TITLE = "Bitrunner Save Game Editor"
+
     CSS = """
     Screen {
         align: center middle;
