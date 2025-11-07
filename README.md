@@ -1,3 +1,9 @@
+07-NOV-2025: Duh... dev-tools ftw.
+
+This works with the current version (v2.8.1 as of this writing)
+- https://steamcommunity.com/app/1812820/discussions/0/4358996848569880045/#c4338734057916248931
+- https://github.com/xxxsinx/bitburner/blob/main/dev.js
+
 # Bitburner Savefile Editor
 
 A Python application to edit your Bitburner save file and apply exploits.
