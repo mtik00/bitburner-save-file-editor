@@ -25,7 +25,7 @@ class ButtonApp(App):
     }
     
     Vertical {
-        width: 50;
+        width: 75%;
         height: auto;
         background: $surface;
         padding: 2;
