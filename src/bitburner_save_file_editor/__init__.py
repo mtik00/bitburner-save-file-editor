@@ -1,10 +1,9 @@
 from textual.app import App, ComposeResult
-from textual.containers import Container, Vertical
+from textual.containers import Vertical
 from textual.widgets import Button, Header, Footer, Static
 from bitburner_save_file_editor.save import SaveGame
 from pathlib import Path
 import sys
-import glob
 
 import argparse
 def parse_args(args: list[str] = sys.argv[1:]) -> argparse.Namespace:
@@ -64,7 +63,7 @@ class ButtonApp(App):
             yield Static(f"out file: {self.outfile.stem}")
             yield Static("Click any button to perform an action", id="status")
             yield Button(f"Set player money to 5Q from {self.savegame.money:.2e}", id="money", variant="primary")
-            yield Button(f"Set player hack exprience to 14000", id="hack", variant="primary")
+            yield Button("Set player hack exprience to 14000", id="hack", variant="primary")
             yield Button("Add 5M faction rep", id="factions", variant="primary")
             yield Button("All of the above", id="all", variant="primary")
             yield Button("Exit", id="exit", variant="success")
@@ -101,13 +100,13 @@ class ButtonApp(App):
             status.update("All hacks applied!")
         else:
             # Update status message for action buttons
-            action_num = button_id[-1]  # Get the number from the button id
-            status.update(f"You clicked Action {action_num}!")
+            status.update(f"You clicked Action {button_id}!")
 
 def get_file(directory: str | None, file: str | None) -> Path:
     if file:
         return Path(file)
     
+    assert isinstance(directory, str)
     files = sorted([x for x in Path(directory).glob("bitburnerSave*.json.gz")], reverse=True)
 
     if not files:

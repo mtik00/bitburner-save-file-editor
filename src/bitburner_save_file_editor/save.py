@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 import gzip
-import shutil
+from typing import Any
 
 FACTIONS = [
     "Daedalus",
@@ -35,8 +35,7 @@ class SaveGame:
         self.gzip = savegame_path
         self.outfile = Path(self.gzip.parent) / "bitburnerSave-modified.json.gz"
         self.ctor: str = ""
-        self.data: dict[str] = {}
-        self._json = {}
+        self._json: dict[str, Any] = {}
 
         self.load()
 
