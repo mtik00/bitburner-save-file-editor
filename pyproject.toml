@@ -1,0 +1,25 @@
+[project]
+name = "bitburner-save-file-editor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tim McFadden", email = "mtik00@users.noreply.github.com" }
+]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "textual>=6.5.0",
+]
+
+[project.scripts]
+bitburner-save-file-editor = "bitburner_save_file_editor:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "ruff>=0.14.4",
+]
